@@ -121,7 +121,7 @@ struct ref_deconvolution_fwd_t : public gpu_primitive_t {
                     && desc()->alg_kind == alg_kind::deconvolution_direct
                     && attr()->has_default_values(attr_skip_mask)
                     && post_ops_with_binary_ok(
-                            attr(), desc()->dst_desc.data_type)
+                            attr(), desc()->dst_desc.data_type, 5)
                     && (utils::everyone_is(data_type::f32,
                                 desc()->src_desc.data_type,
                                 desc()->weights_desc.data_type,
